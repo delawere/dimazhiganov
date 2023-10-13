@@ -4,7 +4,7 @@
 
 - [Telegram](https://t.me/dmitriyZhiganov)
 - [Mail](mailto:delawere2008@gmail.com)
-- [Linkedln](www.linkedin.com/in/dmitriy-zhiganov)
+- [LinkedIn](https://linkedin.com/in/dmitriy-zhiganov)
 - [CV](https://drive.google.com/file/d/1H9UZcgbBOAFti3XODs1MzkznlK84q6z1/view)
 
 **Personal blogs and channels**
