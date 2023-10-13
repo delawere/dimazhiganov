@@ -1,0 +1,45 @@
+:root {
+  --textColor: #121212;
+  --linkColor: #786eff;
+}
+
+body {
+  font-family: "Work Sans", Arial;
+  background-color: rgb(255, 255, 242);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", "Times New Roman";
+}
+
+a {
+  color: var(--linkColor);
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--linkColor);
+}
+
+a:hover,
+a:focus {
+  border-color: transparent;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin-bottom: 2.5em;
+  padding-left: 1em;
+}
+
+.active-link {
+  color: var(--textColor);
+}
