@@ -28,6 +28,7 @@
   gap: 1em;
   list-style: none;
   padding: 0;
+  flex-direction: row;
 }
 
 .nav-link {

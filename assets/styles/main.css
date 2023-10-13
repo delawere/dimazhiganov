@@ -38,8 +38,23 @@ ol {
   padding: 0;
   margin-bottom: 2.5em;
   padding-left: 1em;
+  display: flex;
+  gap: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .active-link {
   color: var(--textColor);
+}
+
+.videos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.videos img {
+  width: 400px;
 }
