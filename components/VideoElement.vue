@@ -1,6 +1,14 @@
-import { ProseP } from '#build/components';
 <script lang="ts" setup>
-const props = defineProps(["loadVideo", "id", "title", "thumbnailUrl"]);
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  id: {
+    type: String,
+    required: true,
+  },
+});
 
 const showVideo = ref(false);
 </script>
@@ -10,7 +18,7 @@ const showVideo = ref(false);
     <template v-if="!showVideo">
       <img
         :class="$style['video-media']"
-        :src="thumbnailUrl"
+        :src="`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`"
         :alt="title"
         ref="mediaRef"
       />
@@ -45,7 +53,8 @@ const showVideo = ref(false);
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
-  background-color: #000;
+  background-color: var(--black);
+  cursor: pointer;
 }
 
 .video-media {
@@ -72,12 +81,12 @@ const showVideo = ref(false);
 }
 
 .video-button-shape {
-  fill: #212121;
+  fill: var(--black);
   fill-opacity: 0.8;
 }
 
 .video-button-icon {
-  fill: #ffffff;
+  fill: var(--white);
 }
 
 .video-button:focus {
@@ -86,7 +95,7 @@ const showVideo = ref(false);
 
 .video:hover .video-button-shape,
 .video-button:focus .video-button-shape {
-  fill: #ff0000;
+  fill: var(--youTubeRed);
   fill-opacity: 1;
 }
 </style>

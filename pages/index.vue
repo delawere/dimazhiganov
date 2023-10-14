@@ -1,27 +1,6 @@
 <script setup lang="ts">
 import VideoElement from "~/components/VideoElement.vue";
-
-const videoList = ref([
-  {
-    title: "my video",
-    id: "LVG64IiEvjw",
-    thumbnailUrl: "https://i.ytimg.com/vi/LVG64IiEvjw/maxresdefault.jpg",
-  },
-  {
-    title: "my video",
-    id: "fFTWZwLvFqA",
-    thumbnailUrl: "https://i.ytimg.com/vi/fFTWZwLvFqA/maxresdefault.jpg",
-  },
-]);
-
-const articleList = ref([
-  {
-    title: "Frontend System Design: Comprehensive Guide",
-    coverUrl: "",
-    articleUrl:
-      "https://medium.com/@delawere2008/frontend-system-design-comprehensive-guide-80c58d531ee9",
-  },
-]);
+import { videosList, articlesList } from "~/constants/content";
 </script>
 
 <template>
@@ -29,23 +8,24 @@ const articleList = ref([
     <img src="/profile-photo.jpg" :class="$style['profile-photo']" />
     <ContentDoc />
     <div :class="$style.section">
-      <div :class="$style.articles">
-        <div v-for="article in articleList">
-          <h2>Recent articles</h2>
-          <a :href="article.articleUrl"> {{ article.title }}</a>
-        </div>
-      </div>
+      <h2>Recent articles</h2>
+      <ul>
+        <li v-for="article in articlesList">
+          <a :href="article.url" target="_blank" rel="noopener">
+            {{ article.title }}
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div :class="$style.section">
       <h2>Recent videos</h2>
       <div :class="$style.videos" ref="videoNodesList">
         <VideoElement
-          v-for="video in videoList"
+          v-for="video in videosList"
           :key="video.title"
           :title="video.title"
           :id="video.id"
-          :thumbnailUrl="video.thumbnailUrl"
         />
       </div>
     </div>
@@ -64,14 +44,16 @@ const articleList = ref([
   margin: 2em 0;
 }
 
-.articles {
-  display: flex;
-}
-
 .videos {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1em;
+}
+
+@media (min-width: 992px) {
+  .videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

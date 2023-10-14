@@ -1,6 +1,10 @@
 :root {
   --textColor: #121212;
   --linkColor: #786eff;
+  --black: #212121;
+  --white: #fff;
+  --youTubeRed: #ff0000;
+  --bgColorLight: rgb(255, 255, 242);
 }
 
 * {
@@ -9,10 +13,11 @@
 
 body {
   font-family: "Work Sans", Arial;
-  background-color: rgb(255, 255, 242);
+  background-color: var(--bgColorLight);
   font-size: 18px;
   overflow-y: scroll;
   margin: 0;
+  line-height: 1.4;
 }
 
 h1,
@@ -26,7 +31,6 @@ h6 {
 
 a {
   color: var(--linkColor);
-  display: inline-block;
   text-decoration: none;
   border-bottom: 1px dashed var(--linkColor);
 }

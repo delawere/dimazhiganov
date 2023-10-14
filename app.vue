@@ -28,7 +28,7 @@
 .wrapper {
   margin: 0 auto;
   width: 80%;
-  max-width: 1000px;
+  max-width: 800px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
