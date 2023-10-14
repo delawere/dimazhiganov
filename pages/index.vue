@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import VideoElement from "~/components/VideoElement.vue";
 import { videosList, articlesList } from "~/constants/content";
 </script>
 
