@@ -3,13 +3,16 @@
   --linkColor: #786eff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Work Sans", Arial;
   background-color: rgb(255, 255, 242);
   font-size: 18px;
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 0 1.5em;
+  overflow-y: scroll;
+  margin: 0;
 }
 
 h1,
@@ -46,15 +49,4 @@ ol {
 
 .active-link {
   color: var(--textColor);
-}
-
-.videos {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.videos img {
-  width: 400px;
 }
