@@ -1,5 +1,5 @@
 ---
-title: "Dima Zhiganov | About"
+title: "About | Dima Zhiganov"
 description: "About"
 ---
 

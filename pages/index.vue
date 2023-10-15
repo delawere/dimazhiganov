@@ -1,32 +1,35 @@
 <script setup lang="ts">
-import { videosList, articlesList } from "~/constants/content";
+const { data } = await useAsyncData("data", () =>
+  queryContent("_data").findOne()
+);
+
+const videosList = data.value?.videos;
+const articlesList = data.value?.articles;
 </script>
 
 <template>
-  <div>
-    <img src="/profile-photo.jpg" :class="$style['profile-photo']" />
-    <ContentDoc />
-    <div :class="$style.section">
-      <h2>Recent articles</h2>
-      <ul>
-        <li v-for="article in articlesList">
-          <a :href="article.url" target="_blank" rel="noopener">
-            {{ article.title }}
-          </a>
-        </li>
-      </ul>
-    </div>
+  <img src="/profile-photo.jpg" :class="$style['profile-photo']" />
+  <ContentDoc />
+  <div :class="$style.section">
+    <h2>Recent articles</h2>
+    <ul>
+      <li v-for="article in articlesList">
+        <a :href="article.url" target="_blank" rel="noopener">
+          {{ article.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
 
-    <div :class="$style.section">
-      <h2>Recent videos</h2>
-      <div :class="$style.videos" ref="videoNodesList">
-        <VideoElement
-          v-for="video in videosList"
-          :key="video.title"
-          :title="video.title"
-          :id="video.id"
-        />
-      </div>
+  <div :class="$style.section">
+    <h2>Recent videos</h2>
+    <div :class="$style.videos" ref="videoNodesList">
+      <VideoElement
+        v-for="video in videosList"
+        :key="video.title"
+        :title="video.title"
+        :id="video.id"
+      />
     </div>
   </div>
 </template>

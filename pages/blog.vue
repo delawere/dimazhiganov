@@ -1,19 +1,22 @@
 <script setup lang="ts">
+const { data } = await useAsyncData("data", () =>
+  queryContent("_data").findOne()
+);
+
+const articlesList = data.value?.articles;
+
 useHead({
-  title: "Dima Zhiganov | My articles",
+  title: "Articles | Dima Zhiganov",
 });
-import { articlesList } from "~/constants/content";
 </script>
 
 <template>
-  <main>
-    <h1>Articles</h1>
-    <ul>
-      <li v-for="article in articlesList">
-        <a :href="article.url" target="_blank" rel="noopener">
-          {{ article.title }}
-        </a>
-      </li>
-    </ul>
-  </main>
+  <h1>Articles</h1>
+  <ul>
+    <li v-for="article in articlesList">
+      <a :href="article.url" target="_blank" rel="noopener">
+        {{ article.title }}
+      </a>
+    </li>
+  </ul>
 </template>
