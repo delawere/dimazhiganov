@@ -25,11 +25,17 @@ import { pagesList } from "~/constants/main";
 <style module>
 .wrapper {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    width: 80%;
+  }
 }
 
 .footer {
