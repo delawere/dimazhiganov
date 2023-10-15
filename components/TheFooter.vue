@@ -1,6 +1,6 @@
 <template>
   <footer :class="$style.footer">
-    {{ new Date().getFullYear() }} - © Dima Zhiganov
+    © {{ new Date().getFullYear() }} Dima Zhiganov. Made with Nuxt and Netlify
   </footer>
 </template>
 
