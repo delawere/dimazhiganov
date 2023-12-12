@@ -15,8 +15,8 @@
   ],
   "videos": [
     {
-      title: "Frontend SD: Table Component",
-      id: "gjbHOi58sRw"
+      "title": "Frontend SD: Table Component",
+      "id": "gjbHOi58sRw"
     },
     {
       "title": "Frontend System Design: Music Streaming Service (Spotify)",
